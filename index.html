@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高一升高二暑假网课推荐 — 数学 & 英语</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --primary: #1d4ed8;
+            --primary-light: #dbeafe;
+            --accent: #059669;
+            --accent-light: #d1fae5;
+            --warning: #d97706;
+            --warning-light: #fef3c7;
+            --danger: #dc2626;
+            --danger-light: #fee2e2;
+            --text: #1e293b;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            padding: 20px;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; }
+
+        /* 顶部导航 */
+        .toc-bar {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .toc-bar summary {
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            user-select: none;
+            list-style: none;
+        }
+
+        .toc-bar summary::-webkit-details-marker { display: none; }
+
+        .toc-bar summary::after {
+            content: " ▼";
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .toc-bar[open] summary::after { content: " ▲"; }
+
+        .toc-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .toc-links a {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f1f5f9;
+            color: var(--text-secondary);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .toc-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 48px 24px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+        }
+
+        header h1 { font-size: 30px; margin-bottom: 12px; }
+        header .subtitle { font-size: 15px; opacity: 0.92; }
+
+        .info-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin: 4px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .section h3 { font-size: 18px; color: var(--text); margin: 24px 0 12px; }
+        .section h4 { font-size: 15px; color: var(--text-secondary); margin: 18px 0 8px; font-weight: 600; }
+        .section p { margin-bottom: 12px; color: var(--text); }
+
+        .highlight-box {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .highlight-box.green { background: var(--accent-light); border-left-color: var(--accent); }
+        .highlight-box.yellow { background: var(--warning-light); border-left-color: var(--warning); }
+        .highlight-box.red { background: var(--danger-light); border-left-color: var(--danger); }
+
+        .platform-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0;
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+        .platform-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+        .platform-card .name { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+
+        .tag {
+            display: inline-block;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        .tag-free { background: var(--accent-light); color: var(--accent); }
+        .tag-paid { background: var(--warning-light); color: var(--warning); }
+        .tag-rec { background: #fce7f3; color: #be185d; }
+        .tag-warn { background: var(--danger-light); color: var(--danger); }
+
+        .platform-card .details { margin-top: 10px; font-size: 14px; color: var(--text-secondary); }
+        .platform-card .details li { margin-bottom: 5px; margin-left: 18px; }
+        .platform-card a { color: var(--primary); text-decoration: none; }
+        .platform-card a:hover { text-decoration: underline; }
+
+        .course-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 4px 4px 4px 0;
+            transition: all 0.2s;
+        }
+        .course-link:hover { background: var(--primary); color: white; }
+        .course-link::after { content: "→"; }
+
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+        th, td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+        th { background: var(--primary-light); color: var(--primary); font-weight: 600; }
+        tr:nth-child(even) { background: #f8fafc; }
+
+        .content-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        @media (max-width: 640px) { .content-list { grid-template-columns: 1fr; } }
+
+        .content-item {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .content-item .chapter { font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+        .content-item .topics { font-size: 13px; color: var(--text-secondary); }
+
+        .schedule-table { margin: 16px 0; }
+        .schedule-table td:first-child { font-weight: 600; white-space: nowrap; width: 100px; }
+
+        .tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 16px;
+            background: #f0f9ff;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-size: 14px;
+        }
+        .tip-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        footer { text-align: center; padding: 24px; color: var(--text-secondary); font-size: 13px; }
+        a { color: var(--primary); }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .comparison-item { border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+        .comparison-item h5 { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
+        .stars { color: #f59e0b; letter-spacing: 2px; }
+        .price-range { font-size: 14px; color: var(--warning); font-weight: 600; }
+
+        ul { margin-left: 20px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; }
+
+        .nav-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+        .nav-links a {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover { background: var(--primary); color: white; }
+
+        .update-banner {
+            background: linear-gradient(90deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .update-banner strong { color: #92400e; }
+
+        /* 折叠面板 */
+        details.fold {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin: 12px 0;
+            background: #f8fafc;
+            overflow: hidden;
+        }
+        details.fold summary {
+            padding: 14px 18px;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            list-style: none;
+            color: var(--text);
+        }
+        details.fold summary::-webkit-details-marker { display: none; }
+        details.fold summary::after {
+            content: " ▼";
+            color: var(--text-secondary);
+            font-size: 12px;
+            float: right;
+        }
+        details.fold[open] summary::after { content: " ▲"; }
+        details.fold .fold-body { padding: 0 18px 18px; }
+
+        /* 返回顶部 */
+        #backToTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            box-shadow: 0 4px 12px rgba(29,78,216,0.3);
+            z-index: 99;
+        }
+        #backToTop.visible { opacity: 1; visibility: visible; }
+        #backToTop:hover { background: #1e40af; }
+
+        /* 打印页眉页脚（屏幕隐藏） */
+        .print-header, .print-footer { display: none; }
+
+        /* 打印按钮 */
+        #printBtn {
+            position: fixed;
+            right: 20px;
+            bottom: 74px;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 50%;
+            background: #059669;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(5,150,105,0.35);
+            z-index: 99;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #printBtn:hover { background: #047857; }
+
+        /* ===== 打印样式 ===== */
+        @page {
+            size: A4;
+            margin: 22mm 16mm 22mm;
+        }
+
+        @media print {
+            /* — 基础重置 — */
+            body {
+                padding: 0;
+                background: white;
+                font-size: 10.5pt;
+                line-height: 1.55;
+                color: #1a1a1a;
+            }
+            .container {
+                max-width: 100%;
+                padding-top: 8mm;
+                padding-bottom: 6mm;
+            }
+
+            /* — 隐藏交互元素 — */
+            .toc-bar, #backToTop, #printBtn, header { display: none !important; }
+
+            /* — 打印页眉（每页重复） — */
+            .print-header {
+                display: block !important;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: 6px 0 6px 0;
+                font-size: 9pt;
+                color: #666;
+                text-align: right;
+                border-bottom: 0.5pt solid #ccc;
+            }
+
+            /* — 打印页脚（每页重复） — */
+            .print-footer {
+                display: flex !important;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 4px 0 0 0;
+                font-size: 8.5pt;
+                color: #888;
+                border-top: 0.5pt solid #ccc;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .print-footer-left { text-align: left; }
+            .print-footer-right { text-align: right; }
+
+            /* — 更新横幅 — */
+            .update-banner {
+                background: none !important;
+                border: 1px solid #c90;
+                font-size: 10pt;
+            }
+            .update-banner strong { color: #8a5a00; }
+
+            /* — 章节卡片 — */
+            .section {
+                break-inside: avoid-page;
+                border: none;
+                box-shadow: none;
+                padding: 10px 0;
+                margin-bottom: 6px;
+                border-bottom: 1px solid #ddd;
+            }
+            .section h2 {
+                font-size: 13pt;
+                color: #1a1a1a;
+                border-bottom-color: #999;
+                padding-bottom: 6px;
+                margin-bottom: 10px;
+            }
+            .section h3 { font-size: 11pt; margin: 14px 0 8px; }
+            .section h4 { font-size: 10pt; }
+            .section p { font-size: 10pt; }
+
+            /* — 高亮框：去背景，保留左边框；允许跨页分割 — */
+            .highlight-box {
+                background: none !important;
+                border-left: 3px solid #555;
+                padding: 8px 12px;
+                margin: 10px 0;
+                /* 不强制避免跨页，让浏览器自然排版 */
+            }
+            .highlight-box p {
+                orphans: 3;
+                widows: 3;
+                margin-bottom: 4px;
+            }
+            .highlight-box.red    { border-left-color: #c00; }
+            .highlight-box.green  { border-left-color: #070; }
+            .highlight-box.yellow { border-left-color: #b80; }
+
+            /* — 标签：去背景色 — */
+            .tag {
+                background: none !important;
+                border: 1px solid #aaa;
+                color: #444;
+                font-size: 8pt;
+                padding: 1px 8px;
+            }
+
+            /* — 平台卡片 — */
+            .platform-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                break-inside: avoid;
+                padding: 12px;
+                margin: 10px 0;
+            }
+
+            /* — 网格布局：打印时单列 — */
+            .content-list { grid-template-columns: 1fr; gap: 8px; }
+            .content-item {
+                border: 1px solid #ccc;
+                background: none !important;
+                break-inside: avoid;
+                padding: 10px;
+            }
+            .comparison-grid { grid-template-columns: 1fr; gap: 8px; }
+            .comparison-item {
+                border: 1px solid #ccc;
+                break-inside: avoid;
+                padding: 10px;
+            }
+
+            /* — 表格 — */
+            table { font-size: 9.5pt; margin: 10px 0; }
+            th { background: #eee !important; color: #1a1a1a; }
+            td { border-color: #ccc; }
+            tr { break-inside: avoid; }
+
+            /* — 提示条 — */
+            .tip {
+                background: none !important;
+                border-left: 2px solid #888;
+                padding: 6px 10px;
+                font-size: 9.5pt;
+                break-inside: avoid;
+            }
+            .tip-icon { background: #555 !important; }
+
+            /* — 链接：显示URL — */
+            a { color: #1a1a1a !important; text-decoration: underline; }
+
+            /* 课程链接按钮样式 */
+            a.course-link {
+                background: none !important;
+                color: #1a1a1a !important;
+                border: 1px solid #999;
+                padding: 2px 8px;
+                font-size: 9pt;
+                border-radius: 4px;
+            }
+            a.course-link::after { content: ""; }
+
+            /* 外部链接附加URL（排除导航药丸和内联链接） */
+            .platform-card a[href^="http"]::after,
+            .comparison-item a[href^="http"]::after,
+            .nav-links a[href^="http"]::after {
+                content: " (" attr(href) ")";
+                font-size: 8pt;
+                color: #666;
+                word-break: break-all;
+            }
+            /* 章节正文内的链接不重复显示URL */
+            .section > p a::after { content: ""; }
+
+            /* — 导航药丸：去背景 — */
+            .nav-links a {
+                background: none !important;
+                border: 1px solid #bbb;
+                color: #333 !important;
+                font-size: 9pt;
+                padding: 3px 10px;
+            }
+
+            /* — 排版控制 — */
+            p { orphans: 3; widows: 3; }
+            h2, h3, h4, h5 { break-after: avoid; }
+            ul { break-inside: avoid; }
+
+            /* — 星级评价 — */
+            .stars { color: #1a1a1a !important; }
+
+            /* — 页脚 — */
+            footer {
+                border-top: 1px solid #ccc;
+                padding-top: 10px;
+                font-size: 9pt;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 12px; }
+            header h1 { font-size: 24px; }
+            .section { padding: 20px; }
+            table { font-size: 12px; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 打印专用页眉页脚（屏幕隐藏，打印显示） -->
+    <div class="print-header">高一升高二暑假网课推荐 — 数学 & 英语</div>
+    <div class="print-footer">
+        <span class="print-footer-left">2026年7月整理</span>
+        <span class="print-footer-right">第 <span id="currentPage">1</span> 页 / 共 <span id="totalPages">—</span> 页</span>
+    </div>
+
+    <div class="container">
+        <!-- 目录导航 -->
+        <details class="toc-bar" open>
+            <summary>📑 页面目录（点击收起/展开）</summary>
+            <nav class="toc-links">
+                <a href="#section-1">背景与政策</a>
+                <a href="#section-2">学习内容</a>
+                <a href="#section-3">免费资源</a>
+                <a href="#section-4">替代方案</a>
+                <a href="#section-5">已停运平台</a>
+                <a href="#section-6">资源对比</a>
+                <a href="#section-7">学习计划</a>
+                <a href="#section-8">资源链接</a>
+                <a href="#section-9">注意事项</a>
+            </nav>
+        </details>
+
+        <header>
+            <h1>高一升高二 · 暑假网课推荐</h1>
+            <p class="subtitle">数学（人教A版） & 英语（人教版2019）线上学习方案</p>
+            <div style="margin-top: 16px;">
+                <span class="info-badge">英山县第一中学 · 理科课改实验班</span>
+                <span class="info-badge">湖北省新高考 3+1+2</span>
+                <span class="info-badge">巩固 + 预习</span>
+            </div>
+        </header>
+
+        <!-- 更新说明 -->
+        <div class="update-banner">
+            <strong>⚠️ 交叉验证更新（2026-07-03）：</strong>
+            经联网核查，原稿中推荐的学而思、猿辅导、高途课堂、作业帮等付费直播平台已在"双减"政策后<strong>全面停止高中学科类培训</strong>，暑期不可报名。本文已据此重构，删除不合规推荐，转向免费资源 + 合规替代方案 + AI学习工具。B站UP主信息也一并核实更新。
+        </div>
+
+        <!-- 背景说明 -->
+        <div class="section" id="section-1">
+            <h2>一、学习背景与政策环境</h2>
+
+            <h3>湖北新高考模式</h3>
+            <p>湖北省实行"3+1+2"新高考模式。数学和英语作为必考科目（语数外各150分，原始分计入总分），是所有理科方向学生的核心拉分科目。理科课改实验班通常教学进度较快、难度要求更高，暑假是衔接提升的黄金期。</p>
+
+            <h3>"双减"政策对高中网课的影响</h3>
+            <div class="highlight-box red">
+                <strong>关键政策提示：</strong>根据中共中央办公厅、国务院办公厅《关于进一步减轻义务教育阶段学生作业负担和校外培训负担的意见》，"对面向普通高中学生的学科类培训机构的管理，参照本意见有关规定执行"。这意味着<strong>高中学科类培训机构不得占用国家法定节假日、休息日及寒暑假期组织学科类培训</strong>。学而思、作业帮、新东方、猿辅导、高途、网易有道等机构已先后叫停高中学科类课程。
+            </div>
+            <p>因此，传统大班直播课在暑假期间基本不可获取。本文转而推荐以下合规路径：国家官方免费平台、B站个人创作者内容、教辅资源平台、一对一辅导（需甄别合规性），以及AI学习工具辅助自学。</p>
+
+            <h3>暑假学习目标</h3>
+            <div class="content-list">
+                <div class="content-item">
+                    <div class="chapter">巩固复习</div>
+                    <div class="topics">回顾高一必修内容中的薄弱环节，尤其是函数、三角函数、向量等基础模块，为高二学习打牢地基。</div>
+                </div>
+                <div class="content-item">
+                    <div class="chapter">预习新课</div>
+                    <div class="topics">提前学习高二上学期的核心内容——数学的选择性必修第一册（空间向量、解析几何）和英语的必修第三册或选择性必修第一册。</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>关键提醒：</strong>高二数学的选择性必修第一册（空间向量与立体几何、直线和圆的方程、圆锥曲线）是高考压轴题的重点考查区域，难度较大，建议暑假至少预习前两章。
+            </div>
+        </div>
+
+        <!-- 高二上学期学习内容 -->
+        <div class="section" id="section-2">
+            <h2>二、高二上学期学习内容速览</h2>
+
+            <h3>数学 · 人教A版 选择性必修第一册</h3>
+            <div class="content-list">
+                <div class="content-item">
+                    <div class="chapter">第一章 空间向量与立体几何</div>
+                    <div class="topics">空间向量及其运算 · 空间向量基本定理 · 坐标表示 · 空间向量的应用（求角、求距离）</div>
+                </div>
+                <div class="content-item">
+                    <div class="chapter">第二章 直线和圆的方程</div>
+                    <div class="topics">倾斜角与斜率 · 直线方程 · 交点坐标与距离公式 · 圆的方程 · 直线与圆的位置关系</div>
+                </div>
+                <div class="content-item">
+                    <div class="chapter">第三章 圆锥曲线的方程</div>
+                    <div class="topics">椭圆 · 双曲线 · 抛物线 · 离心率 · 焦点弦问题</div>
+                </div>
+                <div class="content-item">
+                    <div class="chapter">英语 · 人教版必修第三册</div>
+                    <div class="topics">Unit 1 Festivals and Celebrations · Unit 2 Morals and Virtues · Unit 3 Diverse Cultures · Unit 4 Space Exploration · Unit 5 The Value of Money</div>
+                </div>
+            </div>
+
+            <p>注：部分学校高一已学完必修第三册，高二上学期直接从<strong>选择性必修第一册</strong>开始。建议先跟任课老师确认实际教学进度。</p>
+        </div>
+
+        <!-- 免费网课资源（核心推荐） -->
+        <div class="section" id="section-3">
+            <h2>三、免费网课资源推荐（主推荐）</h2>
+
+            <p>在"双减"政策下，免费资源成为暑假自主学习的最佳选择。以下平台覆盖了从同步预习到专项提升的全链路需求。</p>
+
+            <div class="platform-card">
+                <div class="name">国家中小学智慧教育平台</div>
+                <span class="tag tag-free">免费</span>
+                <span class="tag tag-rec">强烈推荐</span>
+                <p class="details">教育部官方平台，覆盖人教A版数学和人教版英语全册教材的同步课堂视频。由全国各地优秀教师录制，画质清晰，讲解规范，特别适合预习新课时使用。</p>
+                <ul class="details">
+                    <li><strong>数学：</strong>选择性必修第一册完整同步课程，含空间向量、解析几何全章节</li>
+                    <li><strong>英语：</strong>必修第三册、选择性必修第一册完整同步课程</li>
+                    <li><strong>特点：</strong>完全免费、无广告、有配套练习和电子课本</li>
+                    <li><strong>使用建议：</strong>作为预习的主课源，先看视频再做课本习题</li>
+                </ul>
+                <div style="margin-top: 12px;">
+                    <a href="https://basic.smartedu.cn/" target="_blank" class="course-link">访问平台首页</a>
+                    <span style="font-size: 13px; color: var(--text-secondary);">（进入后搜索"高中数学 选择性必修第一册"或"高中英语 必修第三册"即可找到对应课程）</span>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="name">B站免费课程</div>
+                <span class="tag tag-free">免费</span>
+                <span class="tag tag-rec">推荐</span>
+                <p class="details">B站上有大量优质高中网课视频，以下是经过多渠道交叉验证、口碑较好的UP主和课程：</p>
+
+                <h4>数学推荐</h4>
+                <ul class="details">
+                    <li><strong>一数（一数高中数学）</strong> — B站高中数学领域头部UP主，粉丝超700万。讲解清晰透彻，从基础到拔高都有覆盖，适合预习和巩固。</li>
+                    <li><strong>赵礼显</strong> — 高考数学名师，B站有完整的高中数学体系课程，擅长题型归纳与解题方法。</li>
+                    <li><strong>佟大大/佟硕</strong> — 讲解细致，适合基础巩固和一轮复习。</li>
+                    <li><strong>完整同步课程</strong> — B站搜索"高二数学选择性必修第一册 人教A版"可找到按教材章节逐节讲解的完整录播课。</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <a href="https://m.bilibili.com/space/11838365" target="_blank" class="course-link">一数空间主页</a>
+                    <a href="https://www.bilibili.com/list/ml2536900824?bvid=BV1nR4y1X7wH&oid=346610138" target="_blank" class="course-link">选择性必修第一册完整课</a>
+                </div>
+
+                <h4>英语推荐</h4>
+                <ul class="details">
+                    <li><strong>陶然 Free高考英语</strong> — 新东方前名师，B站有系统的语法、阅读、写作课程，口碑很好。</li>
+                    <li><strong>英语兔</strong> — 语法讲解非常系统和清晰，适合从零开始梳理语法体系。</li>
+                    <li><strong>教书匠大卫</strong> — 语法和阅读专项讲解，体系完整，在微博和喜马拉雅有较高口碑（B站可搜索其名）。</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <a href="https://www.bilibili.com/" target="_blank" class="course-link">B站搜索"陶然 Free高考英语"</a>
+                    <a href="https://www.bilibili.com/" target="_blank" class="course-link">B站搜索"英语兔"</a>
+                    <a href="https://www.bilibili.com/" target="_blank" class="course-link">B站搜索"教书匠大卫"</a>
+                </div>
+
+                <div class="tip" style="margin-top: 12px;">
+                    <div class="tip-icon">!</div>
+                    <div>B站免费资源丰富但质量参差不齐，建议优先看播放量10万+、评论区口碑好的系列课程。注意：B站个人创作者不属于"校外培训机构"，其免费分享的教学视频不受"双减"限制。自学时需要较强的自律性。</div>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="name">学科网（zxxk.com）</div>
+                <span class="tag tag-free">部分免费</span>
+                <span class="tag tag-paid">部分付费</span>
+                <p class="details">国内最大的K12教育资源平台之一，提供海量的同步课件、试卷、教案和暑假预习讲义。作为资源下载平台而非培训机构，不受"双减"限制。</p>
+                <ul class="details">
+                    <li><strong>暑假衔接讲义：</strong>有专门针对高一升高二的数学（人教A版）和英语（人教版）暑假自学讲义，含讲练和答案</li>
+                    <li><strong>精品专辑：</strong>2025年高中暑假提升精品讲义（多版本可选）</li>
+                    <li><strong>价格：</strong>普通点券资源约2-5元/份，VIP会员可享大量免费下载</li>
+                    <li><strong>使用建议：</strong>配合视频课使用，下载配套讲义和练习题效果更好</li>
+                </ul>
+                <p style="margin-top: 10px;">
+                    <a href="https://www.zxxk.com/" target="_blank" class="course-link">访问平台</a>
+                </p>
+            </div>
+
+            <div class="platform-card">
+                <div class="name">51教学网（51jiaoxi.com）</div>
+                <span class="tag tag-free">部分免费</span>
+                <span class="tag tag-paid">部分付费</span>
+                <p class="details">提供大量高中试卷、课件和暑假衔接讲义，有专门针对新高二的数学和英语暑假自学讲练专辑。</p>
+                <ul class="details">
+                    <li>新高二数学暑假衔接讲练（人教A版，含答案）</li>
+                    <li>新高二英语暑假衔接讲练（人教版，含答案）</li>
+                    <li>黄冈地区高一期中考试卷、鄂东南教改联盟联考真题</li>
+                </ul>
+                <p style="margin-top: 10px;">
+                    <a href="https://www.51jiaoxi.com/" target="_blank" class="course-link">访问平台</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- 合规替代方案 -->
+        <div class="section" id="section-4">
+            <h2>四、"双减"后的合规替代方案</h2>
+
+            <p>"双减"政策叫停了暑期大班学科直播课，但以下途径仍可作为补充：</p>
+
+            <h3>一对一在线辅导</h3>
+            <div class="highlight-box yellow">
+                <strong>注意：</strong>一对一辅导的合规性较为复杂。政策对"高中阶段"的一对一管理各地执行力度不一，部分省份允许高中阶段非寒暑假时段的一对一辅导。建议在使用前确认当地教育主管部门的最新规定。以下平台仍在运营高中一对一业务，但课程形式可能受时间限制。
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h5>掌门一对一</h5>
+                    <span class="tag tag-paid">付费</span>
+                    <p style="margin: 8px 0; font-size: 14px;">老牌全科一对一平台，师资库较大，可按需选科选老师。</p>
+                    <p class="price-range">参考价：约150-300元/课时</p>
+                    <p class="stars">师资质量：★★★★☆</p>
+                    <ul style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">
+                        <li>支持数学、英语单科辅导</li>
+                        <li>可自选上课时间（需避开政策限制时段）</li>
+                        <li>建议先试听再决定</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-item">
+                    <h5>猿辅导一对一</h5>
+                    <span class="tag tag-paid">付费</span>
+                    <p style="margin: 8px 0; font-size: 14px;">猿辅导转型后保留的一对一业务线，依托大数据和题库资源。</p>
+                    <p class="price-range">参考价：约200-400元/课时</p>
+                    <p class="stars">师资质量：★★★☆☆</p>
+                    <ul style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">
+                        <li>有AI辅助诊断薄弱知识点</li>
+                        <li>智能题库推送针对性练习</li>
+                        <li>原大班课已停，仅一对一可选</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>AI学习工具辅助自学</h3>
+            <p>"双减"后AI教育工具快速发展，可作为自主学习的有力补充，尤其在暑假自学场景下非常实用：</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h5>科大讯飞AI学习机</h5>
+                    <span class="tag tag-paid">硬件付费</span>
+                    <p style="margin: 8px 0; font-size: 14px;">内置AI精准学功能，可诊断知识薄弱点并推送针对性微课和练习。覆盖高中全学科，数学的圆锥曲线、空间向量等模块有精细化知识图谱。</p>
+                    <p class="price-range">参考价：约3000-6000元（一次性硬件）</p>
+                    <ul style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">
+                        <li>AI诊断 → 精准练习 → 错题回顾闭环</li>
+                        <li>可离线使用，护眼屏幕</li>
+                        <li>适合暑假自学预习+巩固</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-item">
+                    <h5>有道词典笔 / 有道学习系统</h5>
+                    <span class="tag tag-paid">硬件付费</span>
+                    <p style="margin: 8px 0; font-size: 14px;">英语学习利器。词典笔可扫词翻译、跟读打分，有道学习系统有AI作文批改和语法诊断功能。</p>
+                    <p class="price-range">参考价：约500-1500元（硬件）</p>
+                    <ul style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">
+                        <li>扫词翻译速度快，适合阅读训练</li>
+                        <li>AI作文批改可替代部分老师反馈</li>
+                        <li>英语自学的低成本高效工具</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-item">
+                    <h5>夸克高考 / AI搜题工具</h5>
+                    <span class="tag tag-free">免费</span>
+                    <p style="margin: 8px 0; font-size: 14px;">手机端AI学习工具，可拍照搜题获取解析，有高中知识点微课和高考真题库。注意：搜题工具是辅助手段，不能替代系统学习。</p>
+                    <p class="price-range">免费（部分功能VIP）</p>
+                    <ul style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">
+                        <li>遇到不会的题可快速获取思路</li>
+                        <li>有按教材版本分类的同步练习</li>
+                        <li>注意控制使用频率，避免依赖</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 已停运平台说明 -->
+        <div class="section" id="section-5">
+            <h2>五、已停运平台说明（避免踩坑）</h2>
+
+            <p>以下平台曾是国内高中网课的主流选择，但"双减"后已全面叫停高中学科类培训，<strong>暑假期间无法报名</strong>。列在此处是为了提醒家长不要被过时信息误导。</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>平台</th>
+                        <th>原业务</th>
+                        <th>现状</th>
+                        <th>转型方向</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>学而思网校</strong></td>
+                        <td>高中大班直播课</td>
+                        <td><span style="color: var(--danger);">已停运高中学科培训</span></td>
+                        <td>小学初中非学科（科学益智、人文美育）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>猿辅导</strong></td>
+                        <td>高中系统班课</td>
+                        <td><span style="color: var(--danger);">大班课已停</span></td>
+                        <td>仅保留一对一业务，转向教辅硬件</td>
+                    </tr>
+                    <tr>
+                        <td><strong>高途课堂</strong></td>
+                        <td>高中暑秋联报班</td>
+                        <td><span style="color: var(--danger);">已停运高中学科培训</span></td>
+                        <td>升学规划、选科指导、志愿填报</td>
+                    </tr>
+                    <tr>
+                        <td><strong>作业帮</strong></td>
+                        <td>高中暑假衔接班</td>
+                        <td><span style="color: var(--danger);">已停运高中学科培训</span></td>
+                        <td>搜题工具、教辅硬件（作业帮学习机）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>新东方</strong></td>
+                        <td>高中学科培训</td>
+                        <td><span style="color: var(--danger);">已停运高中学科培训</span></td>
+                        <td>素质培养、国际教育、小语种</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box red">
+                <strong>防骗提醒：</strong>网络上仍有大量这些平台的"暑期班报名"推广文章（多为SEO引流内容），实际点进去要么是过时信息，要么引导至非学科类课程。请勿被误导。如发现违规开展高中学科暑期培训的机构，可向当地教育主管部门举报。
+            </div>
+        </div>
+
+        <!-- 平台综合对比 -->
+        <div class="section" id="section-6">
+            <h2>六、当前可用资源综合对比</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>资源/平台</th>
+                        <th>类型</th>
+                        <th>数学</th>
+                        <th>英语</th>
+                        <th>费用</th>
+                        <th>适合场景</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>国家智慧教育平台</strong></td>
+                        <td>免费录播</td>
+                        <td>选择性必修一全覆盖</td>
+                        <td>必修三/选择性必修一</td>
+                        <td>免费</td>
+                        <td>系统预习新课（首选）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B站</strong></td>
+                        <td>免费录播</td>
+                        <td>一数等UP主系列课</td>
+                        <td>陶然/英语兔等专项课</td>
+                        <td>免费</td>
+                        <td>补充讲解、查漏补缺</td>
+                    </tr>
+                    <tr>
+                        <td><strong>学科网</strong></td>
+                        <td>资源平台</td>
+                        <td>讲义/试卷/课件</td>
+                        <td>讲义/试卷/课件</td>
+                        <td>2-5元/份或VIP</td>
+                        <td>配套练习、模拟试卷</td>
+                    </tr>
+                    <tr>
+                        <td><strong>51教学网</strong></td>
+                        <td>资源平台</td>
+                        <td>暑假衔接讲练</td>
+                        <td>暑假衔接讲练</td>
+                        <td>2-5元/份</td>
+                        <td>暑假专项讲义</td>
+                    </tr>
+                    <tr>
+                        <td><strong>掌门一对一</strong></td>
+                        <td>付费1对1</td>
+                        <td>按需选老师</td>
+                        <td>按需选老师</td>
+                        <td>150-300元/课时</td>
+                        <td>针对性答疑（需确认合规）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>科大讯飞学习机</strong></td>
+                        <td>AI硬件</td>
+                        <td>知识图谱+微课</td>
+                        <td>有限支持</td>
+                        <td>3000-6000元（一次性）</td>
+                        <td>自主诊断+精准练习</td>
+                    </tr>
+                    <tr>
+                        <td><strong>有道词典笔</strong></td>
+                        <td>AI硬件</td>
+                        <td>—</td>
+                        <td>扫词/翻译/作文批改</td>
+                        <td>500-1500元（一次性）</td>
+                        <td>英语阅读和写作辅助</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 暑假学习计划 -->
+        <div class="section" id="section-7">
+            <h2>七、暑假学习方案建议</h2>
+
+            <h3>推荐组合方案</h3>
+            <div class="highlight-box green">
+                <p><strong>免费主力方案（推荐）：</strong><br>
+                国家智慧教育平台（系统预习） + B站一数（数学补充讲解） + B站陶然/英语兔（英语语法阅读） + 学科网/51教学网（配套讲义练习）</p>
+                <p><strong>增强方案（如需针对性辅导）：</strong><br>
+                在免费方案基础上，加报掌门一对一的数学/英语针对性辅导（每周1-2次），用于解答自学中的疑难问题。辅以有道词典笔提升英语自学效率。</p>
+            </div>
+
+            <h3>时间规划（约6-8周暑假）</h3>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>阶段</th>
+                        <th>时间</th>
+                        <th>数学重点</th>
+                        <th>英语重点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第1阶段<br>巩固复习</td>
+                        <td>前2周</td>
+                        <td>回顾高一必修核心内容：三角函数恒等变换、平面向量、函数综合题</td>
+                        <td>复习必修一二重点词汇和语法（定语从句、时态语态）</td>
+                    </tr>
+                    <tr>
+                        <td>第2阶段<br>预习新课</td>
+                        <td>中间3-4周</td>
+                        <td>学习选择性必修一：第一章空间向量、第二章直线与圆</td>
+                        <td>预习必修第三册Unit 1-3或选择性必修第一册</td>
+                    </tr>
+                    <tr>
+                        <td>第3阶段<br>拔高训练</td>
+                        <td>最后1-2周</td>
+                        <td>圆锥曲线基础 + 综合练习</td>
+                        <td>阅读理解和写作专项训练</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>每日参考安排</h3>
+            <div class="content-list">
+                <div class="content-item">
+                    <div class="chapter">上午 · 数学（2-2.5小时）</div>
+                    <div class="topics">
+                        1. 国家平台/B站看网课视频（40-60分钟）<br>
+                        2. 整理笔记和例题（20分钟）<br>
+                        3. 完成学科网配套练习（40-60分钟）<br>
+                        4. 错题整理（20分钟）
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="chapter">下午 · 英语（1.5-2小时）</div>
+                    <div class="topics">
+                        1. 课文阅读 + 词汇记忆（30分钟）<br>
+                        2. B站语法专项学习（30分钟）<br>
+                        3. 阅读理解/完形填空（30分钟）<br>
+                        4. 听力训练或写作练习（30分钟）
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box green">
+                <p><strong>理科实验班学生专属建议：</strong></p>
+                <p>1. 数学是拉分关键，暑假预习进度建议至少完成选择性必修一的前两章（空间向量 + 直线与圆），开学后会轻松很多。</p>
+                <p>2. 英语方面，理科生容易忽视，但新高考英语难度不低。建议每天保持30分钟英语阅读量，暑假积累1000+词汇。</p>
+                <p>3. 可以利用黄冈地区的教育资源优势，关注鄂东南教改联盟的联考真题，提前了解高二考试方向。</p>
+            </div>
+        </div>
+
+        <!-- 实用资源链接 -->
+        <div class="section" id="section-8">
+            <h2>八、实用资源链接汇总</h2>
+
+            <h3>免费学习平台</h3>
+            <div class="nav-links">
+                <a href="https://basic.smartedu.cn/" target="_blank">国家智慧教育平台</a>
+                <a href="https://www.bilibili.com/" target="_blank">B站</a>
+                <a href="https://www.zxxk.com/" target="_blank">学科网</a>
+                <a href="https://www.51jiaoxi.com/" target="_blank">51教学网</a>
+            </div>
+
+            <h3>B站推荐UP主与课程</h3>
+            <div class="nav-links">
+                <a href="https://m.bilibili.com/space/11838365" target="_blank">一数高中数学</a>
+                <a href="https://www.bilibili.com/list/ml2536900824?bvid=BV1nR4y1X7wH&oid=346610138" target="_blank">数学选择性必修第一册完整课</a>
+                <a href="https://www.bilibili.com/" target="_blank">B站搜索"陶然 Free高考英语"</a>
+                <a href="https://www.bilibili.com/" target="_blank">B站搜索"英语兔"</a>
+            </div>
+
+            <h3>一对一辅导（需确认合规性）</h3>
+            <div class="nav-links">
+                <a href="https://www.zhangmen.com/" target="_blank">掌门一对一</a>
+                <a href="https://www.yuanfudao.com/" target="_blank">猿辅导一对一</a>
+            </div>
+
+            <h3>AI学习工具</h3>
+            <div class="nav-links">
+                <a href="https://www.iflytek.com/" target="_blank">科大讯飞学习机</a>
+                <a href="https://smart.youdao.com/" target="_blank">有道词典笔</a>
+            </div>
+
+            <h3>电子课本与教材</h3>
+            <div class="nav-links">
+                <a href="https://www.keben1.com/a/sxrx1a/keben.html" target="_blank">数学选择性必修一（A版）目录</a>
+                <a href="https://m.51jiaoxi.com/books/3000401/" target="_blank">英语必修第三册资源</a>
+                <a href="https://m.51jiaoxi.com/doc-5852069.html" target="_blank">数学选择性必修一电子课本</a>
+            </div>
+
+            <h3>暑假讲义与练习</h3>
+            <div class="nav-links">
+                <a href="https://m.51jiaoxi.com/album-126636.html" target="_blank">新高二数学暑假衔接讲练（人教A版）</a>
+                <a href="https://m.51jiaoxi.com/album-126863.html" target="_blank">新高二英语暑假衔接讲练（人教版）</a>
+                <a href="https://m.zxxk.com/docpack/3509266.html" target="_blank">2025高中数学暑假提升精品讲义</a>
+                <a href="https://m.51jiaoxi.com/album-150204.html" target="_blank">高一升高二暑假数学复习预习试题</a>
+            </div>
+
+            <h3>黄冈 / 湖北地区联考资源</h3>
+            <div class="nav-links">
+                <a href="https://m.51jiaoxi.com/pack-4413.html" target="_blank">2025黄冈高一期中考试卷</a>
+                <a href="https://m.51jiaoxi.com/doc-16897959.html" target="_blank">鄂东南教改联盟联考英语试卷</a>
+                <a href="https://m.51jiaoxi.com/album-136832.html" target="_blank">湖北省部分重点高中高二上考试卷</a>
+                <a href="https://m.zxxk.com/docpack/3585881.html" target="_blank">湖北省高二上期中数学试卷汇总</a>
+                <a href="https://m.zxxk.com/docpack/3584335.html" target="_blank">湖北省高二上期中英语试卷汇总</a>
+            </div>
+        </div>
+
+        <!-- 注意事项 -->
+        <div class="section" id="section-9">
+            <h2>九、注意事项</h2>
+
+            <div class="tip">
+                <div class="tip-icon">1</div>
+                <div><strong>确认教材版本：</strong>建议开学前与任课老师确认高二上学期实际使用的教材册次（特别是英语是学必修第三册还是选择性必修第一册），以免预习方向偏差。</div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">2</div>
+                <div><strong>警惕违规培训陷阱：</strong>网络上仍有大量学而思、猿辅导等平台的"暑期班报名"推广文章，多为过时信息或SEO引流。这些平台已停运高中学科培训，请勿被误导。如遇违规开展暑期高中学科培训的机构，可向12345或当地教育局举报。</div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">3</div>
+                <div><strong>一对一辅导需确认合规：</strong>各地对高中阶段一对一辅导的执行标准不同。报名前建议咨询当地教育主管部门，确认暑假期间是否可以进行一对一学科辅导，避免权益受损。</div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">4</div>
+                <div><strong>免费资源足够用：</strong>国家智慧教育平台的同步课 + B站UP主的专题课 + 学科网的配套练习，三者组合已能覆盖暑假预习和巩固的绝大部分需求。自律是关键，工具是辅助。</div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">5</div>
+                <div><strong>避免贪多嚼不烂：</strong>暑假不宜贪多。建议数学和英语各选一个主课源（国家平台为主，B站为辅），坚持完成比什么都重要。</div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">6</div>
+                <div><strong>注意护眼和作息：</strong>网课学习注意每40-50分钟休息一次，暑假保持规律作息，建议上午学习、下午适当运动和休息。</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>本页面信息搜集于 2026年7月，经联网交叉验证。"双减"政策执行细则各地可能有差异，请以当地教育主管部门最新通知为准。</p>
+            <p>整理工具：QoderWork · <a href="https://docs.qoder.com" target="_blank">docs.qoder.com</a></p>
+        </footer>
+    </div>
+
+    <button id="printBtn" title="打印本页"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+    <button id="backToTop" title="返回顶部">↑</button>
+
+    <script>
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 打印按钮
+        document.getElementById('printBtn').addEventListener('click', function() {
+            window.print();
+        });
+
+        // 打印前计算总页数
+        window.addEventListener('beforeprint', function() {
+            // A4 高度 297mm，页边距上22mm+下22mm = 可用高度 253mm
+            // 转换为 CSS 像素（96 DPI）: 253mm * 96/25.4 ≈ 956px
+            const pageHeightPx = 956;
+            const totalHeight = document.documentElement.scrollHeight;
+            const totalPages = Math.max(1, Math.ceil(totalHeight / pageHeightPx));
+            document.getElementById('totalPages').textContent = totalPages;
+        });
+    </script>
+</body>
+</html>
