@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>高一升高二暑假网课推荐 — 数学 & 英语</title>
+    <meta name="description" content="面向湖北新高考高一升高二理科实验班学生的暑假网课学习方案。涵盖数学（人教A版选择性必修一）与英语（人教版必修第三册）的免费资源推荐、合规替代方案、分层学习计划与每日安排。">
+    <meta name="keywords" content="高一升高二,暑假网课,高中数学,高中英语,人教A版,选择性必修第一册,双减,免费学习资源,B站网课,国家智慧教育平台">
+    <meta property="og:title" content="高一升高二暑假网课推荐 — 数学 & 英语">
+    <meta property="og:description" content="面向湖北新高考高一升高二理科实验班学生的暑假学习方案：免费资源推荐、合规替代方案、分层学习计划与每日安排。">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN">
     <style>
         :root {
             --bg: #f8fafc;
@@ -120,6 +126,7 @@
             padding: 28px;
             margin-bottom: 24px;
             border: 1px solid var(--border);
+            scroll-margin-top: 80px;
         }
 
         .section h2 {
@@ -163,10 +170,10 @@
             margin-right: 6px;
             margin-bottom: 6px;
         }
-        .tag-free { background: var(--accent-light); color: var(--accent); }
-        .tag-paid { background: var(--warning-light); color: var(--warning); }
-        .tag-rec { background: #fce7f3; color: #be185d; }
-        .tag-warn { background: var(--danger-light); color: var(--danger); }
+        .tag-free { background: var(--accent-light); color: #065f46; }
+        .tag-paid { background: var(--warning-light); color: #92400e; }
+        .tag-rec { background: #fce7f3; color: #9d174d; }
+        .tag-warn { background: var(--danger-light); color: #991b1b; }
 
         .platform-card .details { margin-top: 10px; font-size: 14px; color: var(--text-secondary); }
         .platform-card .details li { margin-bottom: 5px; margin-left: 18px; }
@@ -212,7 +219,8 @@
         .content-item .chapter { font-weight: 700; color: var(--primary); margin-bottom: 6px; }
         .content-item .topics { font-size: 13px; color: var(--text-secondary); }
 
-        .schedule-table { margin: 16px 0; }
+        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
+        .schedule-table { margin: 16px 0; min-width: 500px; }
         .schedule-table td:first-child { font-weight: 600; white-space: nowrap; width: 100px; }
 
         .tip {
@@ -327,9 +335,6 @@
         #backToTop.visible { opacity: 1; visibility: visible; }
         #backToTop:hover { background: #1e40af; }
 
-        /* 打印页眉页脚（屏幕隐藏） */
-        .print-header, .print-footer { display: none; }
-
         /* 打印按钮 */
         #printBtn {
             position: fixed;
@@ -356,6 +361,21 @@
         @page {
             size: A4;
             margin: 22mm 16mm 22mm;
+            @top-right {
+                content: "高一升高二暑假网课推荐 — 数学 & 英语";
+                font-size: 9pt;
+                color: #666;
+            }
+            @bottom-left {
+                content: "2026年7月整理";
+                font-size: 8.5pt;
+                color: #888;
+            }
+            @bottom-right {
+                content: "第 " counter(page) " 页 / 共 " counter(pages) " 页";
+                font-size: 8.5pt;
+                color: #888;
+            }
         }
 
         @media print {
@@ -375,37 +395,6 @@
 
             /* — 隐藏交互元素 — */
             .toc-bar, #backToTop, #printBtn, header { display: none !important; }
-
-            /* — 打印页眉（每页重复） — */
-            .print-header {
-                display: block !important;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                padding: 6px 0 6px 0;
-                font-size: 9pt;
-                color: #666;
-                text-align: right;
-                border-bottom: 0.5pt solid #ccc;
-            }
-
-            /* — 打印页脚（每页重复） — */
-            .print-footer {
-                display: flex !important;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 4px 0 0 0;
-                font-size: 8.5pt;
-                color: #888;
-                border-top: 0.5pt solid #ccc;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .print-footer-left { text-align: left; }
-            .print-footer-right { text-align: right; }
 
             /* — 更新横幅 — */
             .update-banner {
@@ -562,16 +551,9 @@
     </style>
 </head>
 <body>
-    <!-- 打印专用页眉页脚（屏幕隐藏，打印显示） -->
-    <div class="print-header">高一升高二暑假网课推荐 — 数学 & 英语</div>
-    <div class="print-footer">
-        <span class="print-footer-left">2026年7月整理</span>
-        <span class="print-footer-right">第 <span id="currentPage">1</span> 页 / 共 <span id="totalPages">—</span> 页</span>
-    </div>
-
     <div class="container">
         <!-- 目录导航 -->
-        <details class="toc-bar" open>
+        <details class="toc-bar" open aria-label="页面目录导航">
             <summary>📑 页面目录（点击收起/展开）</summary>
             <nav class="toc-links">
                 <a href="#section-1">背景与政策</a>
@@ -611,7 +593,7 @@
 
             <h3>"双减"政策对高中网课的影响</h3>
             <div class="highlight-box red">
-                <strong>关键政策提示：</strong>根据中共中央办公厅、国务院办公厅《关于进一步减轻义务教育阶段学生作业负担和校外培训负担的意见》，"对面向普通高中学生的学科类培训机构的管理，参照本意见有关规定执行"。这意味着<strong>高中学科类培训机构不得占用国家法定节假日、休息日及寒暑假期组织学科类培训</strong>。学而思、作业帮、新东方、猿辅导、高途、网易有道等机构已先后叫停高中学科类课程。
+                <strong>关键政策提示：</strong>根据中共中央办公厅、国务院办公厅《关于进一步减轻义务教育阶段学生作业负担和校外培训负担的意见》，"对面向普通高中学生的学科类培训机构的管理，参照本意见有关规定执行"。这意味着<strong>高中学科类培训机构不得占用国家法定节假日、休息日及寒暑假期组织学科类培训</strong>。学而思、作业帮、新东方、猿辅导、高途、网易有道等机构已先后大幅调整或停止高中学科类培训业务，寒暑假期间基本无法报名大班直播课。各地执行力度有所差异，请以当地教育主管部门最新通知为准。
             </div>
             <p>因此，传统大班直播课在暑假期间基本不可获取。本文转而推荐以下合规路径：国家官方免费平台、B站个人创作者内容、教辅资源平台、一对一辅导（需甄别合规性），以及AI学习工具辅助自学。</p>
 
@@ -677,7 +659,7 @@
                     <li><strong>使用建议：</strong>作为预习的主课源，先看视频再做课本习题</li>
                 </ul>
                 <div style="margin-top: 12px;">
-                    <a href="https://basic.smartedu.cn/" target="_blank" class="course-link">访问平台首页</a>
+                    <a href="https://basic.smartedu.cn/" target="_blank" rel="noopener noreferrer" class="course-link">访问平台首页</a>
                     <span style="font-size: 13px; color: var(--text-secondary);">（进入后搜索"高中数学 选择性必修第一册"或"高中英语 必修第三册"即可找到对应课程）</span>
                 </div>
             </div>
@@ -690,26 +672,28 @@
 
                 <h4>数学推荐</h4>
                 <ul class="details">
-                    <li><strong>一数（一数高中数学）</strong> — B站高中数学领域头部UP主，粉丝超700万。讲解清晰透彻，从基础到拔高都有覆盖，适合预习和巩固。</li>
+                    <li><strong>一数（一数高中数学）</strong> — B站高中数学领域头部UP主，2025年百大UP主，粉丝超2300万。讲解清晰透彻，从基础到拔高都有覆盖，适合预习和巩固。</li>
                     <li><strong>赵礼显</strong> — 高考数学名师，B站有完整的高中数学体系课程，擅长题型归纳与解题方法。</li>
                     <li><strong>佟大大/佟硕</strong> — 讲解细致，适合基础巩固和一轮复习。</li>
                     <li><strong>完整同步课程</strong> — B站搜索"高二数学选择性必修第一册 人教A版"可找到按教材章节逐节讲解的完整录播课。</li>
                 </ul>
                 <div style="margin-top: 10px;">
-                    <a href="https://m.bilibili.com/space/11838365" target="_blank" class="course-link">一数空间主页</a>
-                    <a href="https://www.bilibili.com/list/ml2536900824?bvid=BV1nR4y1X7wH&oid=346610138" target="_blank" class="course-link">选择性必修第一册完整课</a>
+                    <a href="https://space.bilibili.com/14229967" target="_blank" rel="noopener noreferrer" class="course-link">一数空间主页</a>
+                    <a href="https://search.bilibili.com/all?keyword=赵礼显高中数学" target="_blank" rel="noopener noreferrer" class="course-link">赵礼显课程搜索</a>
+                    <a href="https://search.bilibili.com/all?keyword=佟硕高中数学" target="_blank" rel="noopener noreferrer" class="course-link">佟硕课程搜索</a>
+                    <a href="https://www.bilibili.com/list/ml2536900824?bvid=BV1nR4y1X7wH&oid=346610138" target="_blank" rel="noopener noreferrer" class="course-link">选择性必修第一册完整课</a>
                 </div>
 
                 <h4>英语推荐</h4>
                 <ul class="details">
-                    <li><strong>陶然 Free高考英语</strong> — 新东方前名师，B站有系统的语法、阅读、写作课程，口碑很好。</li>
-                    <li><strong>英语兔</strong> — 语法讲解非常系统和清晰，适合从零开始梳理语法体系。</li>
-                    <li><strong>教书匠大卫</strong> — 语法和阅读专项讲解，体系完整，在微博和喜马拉雅有较高口碑（B站可搜索其名）。</li>
+                    <li><strong>陶然 Free高考英语</strong> — 新东方前名师，B站账号"FREE高考英语"粉丝超300万，有系统的语法、阅读、写作课程，口碑很好。</li>
+                    <li><strong>英语兔</strong> — B站知名英语UP主，粉丝超1200万，语法讲解非常系统和清晰，适合从零开始梳理语法体系。</li>
+                    <li><strong>教书匠大卫</strong> — 语法和阅读专项讲解，体系完整，主要活跃于微博和喜马拉雅等平台（B站可搜索其名，非主阵地）。</li>
                 </ul>
                 <div style="margin-top: 10px;">
-                    <a href="https://www.bilibili.com/" target="_blank" class="course-link">B站搜索"陶然 Free高考英语"</a>
-                    <a href="https://www.bilibili.com/" target="_blank" class="course-link">B站搜索"英语兔"</a>
-                    <a href="https://www.bilibili.com/" target="_blank" class="course-link">B站搜索"教书匠大卫"</a>
+                    <a href="https://search.bilibili.com/all?keyword=FREE高考英语" target="_blank" rel="noopener noreferrer" class="course-link">陶然 FREE高考英语</a>
+                    <a href="https://space.bilibili.com/483162496" target="_blank" rel="noopener noreferrer" class="course-link">英语兔空间主页</a>
+                    <a href="https://search.bilibili.com/all?keyword=教书匠大卫英语" target="_blank" rel="noopener noreferrer" class="course-link">搜索"教书匠大卫"</a>
                 </div>
 
                 <div class="tip" style="margin-top: 12px;">
@@ -730,7 +714,7 @@
                     <li><strong>使用建议：</strong>配合视频课使用，下载配套讲义和练习题效果更好</li>
                 </ul>
                 <p style="margin-top: 10px;">
-                    <a href="https://www.zxxk.com/" target="_blank" class="course-link">访问平台</a>
+                    <a href="https://www.zxxk.com/" target="_blank" rel="noopener noreferrer" class="course-link">访问平台</a>
                 </p>
             </div>
 
@@ -745,7 +729,7 @@
                     <li>黄冈地区高一期中考试卷、鄂东南教改联盟联考真题</li>
                 </ul>
                 <p style="margin-top: 10px;">
-                    <a href="https://www.51jiaoxi.com/" target="_blank" class="course-link">访问平台</a>
+                    <a href="https://www.51jiaoxi.com/" target="_blank" rel="noopener noreferrer" class="course-link">访问平台</a>
                 </p>
             </div>
         </div>
@@ -758,7 +742,7 @@
 
             <h3>一对一在线辅导</h3>
             <div class="highlight-box yellow">
-                <strong>注意：</strong>一对一辅导的合规性较为复杂。政策对"高中阶段"的一对一管理各地执行力度不一，部分省份允许高中阶段非寒暑假时段的一对一辅导。建议在使用前确认当地教育主管部门的最新规定。以下平台仍在运营高中一对一业务，但课程形式可能受时间限制。
+                <strong>重要合规提醒：</strong>一对一辅导的合规性较为复杂。按"双减"政策，<strong>暑假属于"寒暑假期"，高中学科类培训（包括一对一形式）在暑期同样受限</strong>。各地对高中阶段一对一的执行力度不一，部分省份仅允许非寒暑假时段的一对一辅导。<strong>报名前务必先咨询当地教育主管部门，确认暑假期间是否可以进行一对一学科辅导</strong>，避免权益受损。以下平台信息仅供参考，业务状态可能随时调整，请以平台官方最新公告为准。
             </div>
 
             <div class="comparison-grid">
@@ -778,13 +762,14 @@
                 <div class="comparison-item">
                     <h5>猿辅导一对一</h5>
                     <span class="tag tag-paid">付费</span>
-                    <p style="margin: 8px 0; font-size: 14px;">猿辅导转型后保留的一对一业务线，依托大数据和题库资源。</p>
-                    <p class="price-range">参考价：约200-400元/课时</p>
+                    <span class="tag tag-warn">业务状态待核实</span>
+                    <p style="margin: 8px 0; font-size: 14px;">猿辅导曾关闭初高中在线一对一业务，近年转型发力班课与AI产品。一对一业务是否恢复、是否覆盖高中，请以猿辅导官方APP最新信息为准。</p>
+                    <p class="price-range">参考价：约200-400元/课时（如有）</p>
                     <p class="stars">师资质量：★★★☆☆</p>
                     <ul style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">
-                        <li>有AI辅助诊断薄弱知识点</li>
+                        <li>有AI辅助诊断薄弱知识点（AI一对一方向）</li>
                         <li>智能题库推送针对性练习</li>
-                        <li>原大班课已停，仅一对一可选</li>
+                        <li>原大班课已停，一对一业务状态需核实</li>
                     </ul>
                 </div>
             </div>
@@ -835,8 +820,9 @@
         <div class="section" id="section-5">
             <h2>五、已停运平台说明（避免踩坑）</h2>
 
-            <p>以下平台曾是国内高中网课的主流选择，但"双减"后已全面叫停高中学科类培训，<strong>暑假期间无法报名</strong>。列在此处是为了提醒家长不要被过时信息误导。</p>
+            <p>以下平台曾是国内高中网课的主流选择，但"双减"后已大幅调整或停止高中学科类培训，<strong>暑假期间基本无法报名大班课</strong>。列在此处是为了提醒家长不要被过时信息误导。</p>
 
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
@@ -857,7 +843,7 @@
                         <td><strong>猿辅导</strong></td>
                         <td>高中系统班课</td>
                         <td><span style="color: var(--danger);">大班课已停</span></td>
-                        <td>仅保留一对一业务，转向教辅硬件</td>
+                        <td>一对一业务状态待核实，转向教辅硬件</td>
                     </tr>
                     <tr>
                         <td><strong>高途课堂</strong></td>
@@ -877,8 +863,15 @@
                         <td><span style="color: var(--danger);">已停运高中学科培训</span></td>
                         <td>素质培养、国际教育、小语种</td>
                     </tr>
+                    <tr>
+                        <td><strong>腾讯课堂</strong></td>
+                        <td>聚合型在线课堂平台</td>
+                        <td><span style="color: var(--danger);">2024年10月1日整体停运</span></td>
+                        <td>平台已关闭，所有课程不可访问</td>
+                    </tr>
                 </tbody>
             </table>
+            </div>
 
             <div class="highlight-box red">
                 <strong>防骗提醒：</strong>网络上仍有大量这些平台的"暑期班报名"推广文章（多为SEO引流内容），实际点进去要么是过时信息，要么引导至非学科类课程。请勿被误导。如发现违规开展高中学科暑期培训的机构，可向当地教育主管部门举报。
@@ -889,6 +882,7 @@
         <div class="section" id="section-6">
             <h2>六、当前可用资源综合对比</h2>
 
+            <div class="table-scroll">
             <table>
                 <thead>
                     <tr>
@@ -959,6 +953,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
 
         <!-- 暑假学习计划 -->
@@ -974,6 +969,7 @@
             </div>
 
             <h3>时间规划（约6-8周暑假）</h3>
+            <div class="table-scroll">
             <table class="schedule-table">
                 <thead>
                     <tr>
@@ -1004,6 +1000,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
 
             <h3>每日参考安排</h3>
             <div class="content-list">
@@ -1033,6 +1030,52 @@
                 <p>2. 英语方面，理科生容易忽视，但新高考英语难度不低。建议每天保持30分钟英语阅读量，暑假积累1000+词汇。</p>
                 <p>3. 可以利用黄冈地区的教育资源优势，关注鄂东南教改联盟的联考真题，提前了解高二考试方向。</p>
             </div>
+
+            <h3>分层学习建议（按基础水平）</h3>
+            <p style="margin-bottom: 12px; color: var(--text-secondary);">以下方案可根据高一期末成绩自行选择，不必拘泥于实验班统一进度，找到适合自己的节奏最重要。</p>
+            <div class="content-list">
+                <div class="content-item">
+                    <div class="chapter"><span class="tag tag-warn">基础补救</span>　高一期末数学 &lt;90分 / 英语 &lt;90分</div>
+                    <div class="topics">
+                        <strong>目标：</strong>补齐高一薄弱环节，不急于预习新课<br>
+                        <strong>数学：</strong>每天1.5小时回顾必修内容（三角函数、平面向量、函数），用国家智慧教育平台看基础课 + 51教学网基础练习。暑假完成前必修知识补漏即可。<br>
+                        <strong>英语：</strong>每天1小时复习必修一二词汇语法，英语兔语法视频从头看起，每天背30个词<br>
+                        <strong>每日总时长：</strong>约2.5-3小时　|　<strong>自测：</strong>每周末做一套高一综合卷检验补漏效果
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="chapter"><span class="tag tag-free">标准预习</span>　高一期末数学 90-120分 / 英语 90-110分</div>
+                    <div class="topics">
+                        <strong>目标：</strong>巩固 + 预习选择性必修一前两章、英语必修第三册前3单元<br>
+                        <strong>数学：</strong>每天2小时，按上方"每日参考安排"执行，一数视频 + 配套练习<br>
+                        <strong>英语：</strong>每天1.5小时，陶然语法课 + 阅读理解训练<br>
+                        <strong>每日总时长：</strong>约3.5-4小时　|　<strong>自测：</strong>每学完一章做学科网章测卷，正确率达标再进入下一章
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="chapter"><span class="tag tag-rec">拔高拓展</span>　高一期末数学 &gt;120分 / 英语 &gt;110分</div>
+                    <div class="topics">
+                        <strong>目标：</strong>完成选择性必修一全部三章预习 + 拔高训练<br>
+                        <strong>数学：</strong>每天2.5小时，快速过完基础预习后进入圆锥曲线综合题和高考真题训练，可看赵礼显拔高课<br>
+                        <strong>英语：</strong>每天2小时，除语法阅读外增加高考完形+七选五+写作专项，积累高级词汇和句型<br>
+                        <strong>每日总时长：</strong>约4.5-5小时　|　<strong>自测：</strong>每周做一套高二上期中模拟卷，挑战130+难度
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box yellow">
+                <p><strong>休息与节奏提醒：</strong></p>
+                <p>1. <strong>每周建议休息1天</strong>（如周日），不安排学习任务，用于运动、阅读课外书或放松，避免连续高强度学习导致疲劳倦怠。</p>
+                <p>2. 暑假中间可安排3-5天完全休息期（如家庭出游），回来后用1-2天回顾笔记恢复状态再继续。</p>
+                <p>3. 每学习45-50分钟建议休息10分钟，保护视力和注意力。</p>
+            </div>
+
+            <div class="highlight-box green">
+                <p><strong>进度自测机制：</strong></p>
+                <p>1. <strong>章末自测：</strong>每学完一个章节，在学科网或51教学网找一套对应章节测试卷，限时完成，正确率≥80%再进入下一章；正确率&lt;70%则回顾错题重新学习。</p>
+                <p>2. <strong>周复盘：</strong>每周日花30分钟整理本周错题本，归纳薄弱知识点，调整下周学习重心。</p>
+                <p>3. <strong>阶段验收：</strong>第1阶段结束做一套高一综合卷，第2阶段结束做一套高二预习内容测试卷，第3阶段结束做一套高二上期中模拟卷。</p>
+            </div>
         </div>
 
         <!-- 实用资源链接 -->
@@ -1041,54 +1084,55 @@
 
             <h3>免费学习平台</h3>
             <div class="nav-links">
-                <a href="https://basic.smartedu.cn/" target="_blank">国家智慧教育平台</a>
-                <a href="https://www.bilibili.com/" target="_blank">B站</a>
-                <a href="https://www.zxxk.com/" target="_blank">学科网</a>
-                <a href="https://www.51jiaoxi.com/" target="_blank">51教学网</a>
+                <a href="https://basic.smartedu.cn/" target="_blank" rel="noopener noreferrer">国家智慧教育平台</a>
+                <a href="https://www.bilibili.com/" target="_blank" rel="noopener noreferrer">B站</a>
+                <a href="https://www.zxxk.com/" target="_blank" rel="noopener noreferrer">学科网</a>
+                <a href="https://www.51jiaoxi.com/" target="_blank" rel="noopener noreferrer">51教学网</a>
             </div>
 
             <h3>B站推荐UP主与课程</h3>
             <div class="nav-links">
-                <a href="https://m.bilibili.com/space/11838365" target="_blank">一数高中数学</a>
-                <a href="https://www.bilibili.com/list/ml2536900824?bvid=BV1nR4y1X7wH&oid=346610138" target="_blank">数学选择性必修第一册完整课</a>
-                <a href="https://www.bilibili.com/" target="_blank">B站搜索"陶然 Free高考英语"</a>
-                <a href="https://www.bilibili.com/" target="_blank">B站搜索"英语兔"</a>
+                <a href="https://space.bilibili.com/14229967" target="_blank" rel="noopener noreferrer">一数高中数学</a>
+                <a href="https://search.bilibili.com/all?keyword=赵礼显高中数学" target="_blank" rel="noopener noreferrer">赵礼显高中数学</a>
+                <a href="https://www.bilibili.com/list/ml2536900824?bvid=BV1nR4y1X7wH&oid=346610138" target="_blank" rel="noopener noreferrer">数学选择性必修第一册完整课</a>
+                <a href="https://search.bilibili.com/all?keyword=FREE高考英语" target="_blank" rel="noopener noreferrer">陶然 FREE高考英语</a>
+                <a href="https://space.bilibili.com/483162496" target="_blank" rel="noopener noreferrer">英语兔</a>
             </div>
 
             <h3>一对一辅导（需确认合规性）</h3>
             <div class="nav-links">
-                <a href="https://www.zhangmen.com/" target="_blank">掌门一对一</a>
-                <a href="https://www.yuanfudao.com/" target="_blank">猿辅导一对一</a>
+                <a href="https://www.zhangmen.com/" target="_blank" rel="noopener noreferrer">掌门一对一</a>
+                <a href="https://www.yuanfudao.com/" target="_blank" rel="noopener noreferrer">猿辅导一对一</a>
             </div>
 
             <h3>AI学习工具</h3>
             <div class="nav-links">
-                <a href="https://www.iflytek.com/" target="_blank">科大讯飞学习机</a>
-                <a href="https://smart.youdao.com/" target="_blank">有道词典笔</a>
+                <a href="https://edu.iflytek.com/solution/family/learning-pad" target="_blank" rel="noopener noreferrer">科大讯飞学习机</a>
+                <a href="https://smart.youdao.com/" target="_blank" rel="noopener noreferrer">有道词典笔</a>
             </div>
 
             <h3>电子课本与教材</h3>
             <div class="nav-links">
-                <a href="https://www.keben1.com/a/sxrx1a/keben.html" target="_blank">数学选择性必修一（A版）目录</a>
-                <a href="https://m.51jiaoxi.com/books/3000401/" target="_blank">英语必修第三册资源</a>
-                <a href="https://m.51jiaoxi.com/doc-5852069.html" target="_blank">数学选择性必修一电子课本</a>
+                <a href="https://basic.smartedu.cn/elecEdu" target="_blank" rel="noopener noreferrer">数学选择性必修一（A版）电子教材</a>
+                <a href="https://m.51jiaoxi.com/books/3000401/" target="_blank" rel="noopener noreferrer">英语必修第三册资源</a>
+                <a href="https://m.51jiaoxi.com/doc-5852069.html" target="_blank" rel="noopener noreferrer">数学选择性必修一电子课本</a>
             </div>
 
             <h3>暑假讲义与练习</h3>
             <div class="nav-links">
-                <a href="https://m.51jiaoxi.com/album-126636.html" target="_blank">新高二数学暑假衔接讲练（人教A版）</a>
-                <a href="https://m.51jiaoxi.com/album-126863.html" target="_blank">新高二英语暑假衔接讲练（人教版）</a>
-                <a href="https://m.zxxk.com/docpack/3509266.html" target="_blank">2025高中数学暑假提升精品讲义</a>
-                <a href="https://m.51jiaoxi.com/album-150204.html" target="_blank">高一升高二暑假数学复习预习试题</a>
+                <a href="https://m.51jiaoxi.com/album-126636.html" target="_blank" rel="noopener noreferrer">新高二数学暑假衔接讲练（人教A版）</a>
+                <a href="https://m.51jiaoxi.com/album-126863.html" target="_blank" rel="noopener noreferrer">新高二英语暑假衔接讲练（人教版）</a>
+                <a href="https://m.zxxk.com/docpack/3509266.html" target="_blank" rel="noopener noreferrer">2025高中数学暑假提升精品讲义</a>
+                <a href="https://m.51jiaoxi.com/album-150204.html" target="_blank" rel="noopener noreferrer">高一升高二暑假数学复习预习试题</a>
             </div>
 
             <h3>黄冈 / 湖北地区联考资源</h3>
             <div class="nav-links">
-                <a href="https://m.51jiaoxi.com/pack-4413.html" target="_blank">2025黄冈高一期中考试卷</a>
-                <a href="https://m.51jiaoxi.com/doc-16897959.html" target="_blank">鄂东南教改联盟联考英语试卷</a>
-                <a href="https://m.51jiaoxi.com/album-136832.html" target="_blank">湖北省部分重点高中高二上考试卷</a>
-                <a href="https://m.zxxk.com/docpack/3585881.html" target="_blank">湖北省高二上期中数学试卷汇总</a>
-                <a href="https://m.zxxk.com/docpack/3584335.html" target="_blank">湖北省高二上期中英语试卷汇总</a>
+                <a href="https://m.51jiaoxi.com/pack-4413.html" target="_blank" rel="noopener noreferrer">2025黄冈高一期中考试卷</a>
+                <a href="https://m.51jiaoxi.com/doc-16897959.html" target="_blank" rel="noopener noreferrer">鄂东南教改联盟联考英语试卷</a>
+                <a href="https://m.51jiaoxi.com/album-136832.html" target="_blank" rel="noopener noreferrer">湖北省部分重点高中高二上考试卷</a>
+                <a href="https://m.zxxk.com/docpack/3585881.html" target="_blank" rel="noopener noreferrer">湖北省高二上期中数学试卷汇总</a>
+                <a href="https://m.zxxk.com/docpack/3584335.html" target="_blank" rel="noopener noreferrer">湖北省高二上期中英语试卷汇总</a>
             </div>
         </div>
 
@@ -1120,11 +1164,19 @@
                 <div class="tip-icon">6</div>
                 <div><strong>注意护眼和作息：</strong>网课学习注意每40-50分钟休息一次，暑假保持规律作息，建议上午学习、下午适当运动和休息。</div>
             </div>
+            <div class="tip">
+                <div class="tip-icon">7</div>
+                <div><strong>配合纸质教辅效果更好：</strong>网课为主、纸质教辅为辅是高中自学的经典组合。数学推荐《教材帮》（选择性必修第一册）或《王后雄教材完全解读》用于预习勾画知识点；英语推荐《53》必修第三册配套练习。纸质教辅可在做练习、限时训练时减少屏幕依赖，与网课视频互为补充。</div>
+            </div>
+            <div class="tip">
+                <div class="tip-icon">8</div>
+                <div><strong>关注湖北本地教育资源：</strong>湖北省教育资源公共服务平台及黄冈、武汉等地的优质校本资源可作为补充。英山一中老师推荐的校本暑假作业和预习任务应优先完成，本文方案作为课外拓展和补充。</div>
+            </div>
         </div>
 
         <footer>
             <p>本页面信息搜集于 2026年7月，经联网交叉验证。"双减"政策执行细则各地可能有差异，请以当地教育主管部门最新通知为准。</p>
-            <p>整理工具：QoderWork · <a href="https://docs.qoder.com" target="_blank">docs.qoder.com</a></p>
+            <p>整理工具：QoderWork · <a href="https://docs.qoder.com" target="_blank" rel="noopener noreferrer">docs.qoder.com</a></p>
         </footer>
     </div>
 
@@ -1148,16 +1200,6 @@
         // 打印按钮
         document.getElementById('printBtn').addEventListener('click', function() {
             window.print();
-        });
-
-        // 打印前计算总页数
-        window.addEventListener('beforeprint', function() {
-            // A4 高度 297mm，页边距上22mm+下22mm = 可用高度 253mm
-            // 转换为 CSS 像素（96 DPI）: 253mm * 96/25.4 ≈ 956px
-            const pageHeightPx = 956;
-            const totalHeight = document.documentElement.scrollHeight;
-            const totalPages = Math.max(1, Math.ceil(totalHeight / pageHeightPx));
-            document.getElementById('totalPages').textContent = totalPages;
         });
     </script>
 </body>
